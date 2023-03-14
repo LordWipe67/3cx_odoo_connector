@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="crm_lead_view_kanban_inherited" model="ir.ui.view">
+      <field name="name">crm.lead.view.kanban.inherited</field>
+      <field name="model">crm.lead</field>
+      <field name="inherit_id" ref="crm.crm_case_kanban_view_leads"/>
+      <field name="arch" type="xml">
+        <xpath expr="//kanban/templates/t/div/div[3]/div" position="after">
+          <div style="color: #0005FF;">
+            <field name="descrizione_data"/>
+            <field name="ultima_chiamata"/>
+          </div>
+        </xpath>
+        <xpath expr="//kanban/templates/t/div/div[3]/div" position="after">
+          <div style="color: #FF0000;">
+            <field name="descrizione_chiamate"/>
+            <field name="numero_chiamate"/>
+          </div>
+        </xpath>
+      </field>
+<!--      <field name="arch" type="xml">-->
+<!--        <field name="name" position="replace">-->
+<!--          <field name="x_manufacturer"/>-->
+<!--          <field name="name"/>-->
+<!--        </field>-->
+<!--      </field>-->
+    </record>
+  </data>
+</odoo>

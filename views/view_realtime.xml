@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="trecx_realtime_tree_view">
+        <field name="name">Chiamate in corso</field>
+        <field name="model">trecx_realtime</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="stato"/>
+                <field name="chiamante"/>
+                <field name="chiamato"/>
+                <field name="durata"/>
+<!--                <field name="checksum"/>-->
+            </tree>
+        </field>
+    </record>
+</odoo>

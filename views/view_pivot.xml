@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="trecxcrm_pivot_view">
+        <field name="name">Registro Eventi</field>
+        <field name="model">trecxcrm</field>
+        <field name="arch" type="xml">
+            <pivot string="Activities Analysis" sample="1">
+                <field name="operatore" string="Operatore o coda"/>
+                <field name="data_inizio" string="Data"/>
+            </pivot>
+        </field>
+    </record>
+</odoo>

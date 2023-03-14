@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="trecxcrm_action" model="ir.actions.act_window">
+		<field name="name">Registro Eventi</field>
+		<field name="res_model">trecxcrm</field>
+		<field name="view_mode">tree,form,pivot,graph</field>
+		<field name="domain">[]</field>
+		<field name="context">{}</field>
+	</record>
+
+    <record id="trecx_realtime_action" model="ir.actions.act_window">
+		<field name="name">Chiamate in corso</field>
+		<field name="res_model">trecx_realtime</field>
+		<field name="view_mode">tree,form</field>
+		<field name="domain">[]</field>
+		<field name="context">{}</field>
+	</record>
+
+
+    <menuitem id="root_menu" name="Integrazione" web_icon="3cxcrm,static/description/icon.png"/>
+
+    <menuitem id="trecxcrm_main_menu"
+              name="Registro Eventi"
+              parent="root_menu"
+              sequence="1"
+              action="trecxcrm_action"/>
+
+    <menuitem id="trecx_realtime_main_menu"
+              name="Chiamate in corso"
+              parent="root_menu"
+              sequence="4"
+              action="trecx_realtime_action"/>
+
+
+</odoo>

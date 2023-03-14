@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<Crm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Country="[country]" Name="3cxodoo" Version="1" SupportsEmojis="true">
+  <Number Prefix="AsIs" MaxLength="[MaxLength]" />
+  <Connection MaxConcurrentRequests="4" />
+  <Parameters>
+    <Parameter Name="apikey" Type="String" Editor="String" Title="ApiKey" Default="123A" />
+    <Parameter Name="hostodoo" Type="String" Editor="String" Title="Host odoo" Default="http://109.68.46.76:8069" ListValues="http://109.68.46.76:8069" />
+    <Parameter Name="country" Type="String" Editor="String" Title="Country" Default="IT" ListValues="IT;US;" />
+  </Parameters>
+  <Authentication Type="No" />
+<Scenarios>
+    <Scenario Id="" Type="REST">
+      <Request SkipIf="" Url="[hostodoo]/api/3cx/crm" MessagePasses="0" Message="" RequestContentType="application/json" RequestEncoding="Json" RequestType="Post" ResponseType="Json" Interval="[Interval]">
+        <Headers>
+          <Value Key="apikey" Passes="1" Type="String">[apikey]</Value>
+        </Headers>
+        <PostValues>
+          <Value Key="number" Passes="1" Type="String">[Number]</Value>
+          <Value Key="activecalls" Passes="1" Type="String">[ActiveCalls]</Value>
+          <Value Key="callslist" Passes="1" Type="String">[CallsList]</Value>
+          <Value Key="callstatus" Passes="1" Type="String">[CallStatus]</Value>
+          <Value Key="internal" Passes="1" Type="String">[Internal]</Value>
+        </PostValues>
+      </Request>
+      <Rules>
+        <Rule Type="Any">partner_id</Rule>
+      </Rules>
+      <Variables>
+        <Variable Name="ContactID" Path="partner_id">
+          <Filter />
+        </Variable>
+        <Variable Name="FirstName" Path="first">
+          <Filter />
+        </Variable>
+        <Variable Name="Email" Path="email">
+          <Filter />
+        </Variable>
+        <Variable Name="PhoneMobile" Path="mobile">
+          <Filter />
+        </Variable>
+        <Variable Name="ContactUrl" Path="url">
+          <Filter />
+        </Variable>
+        <Variable Name="firstname">firstname<Filter /></Variable>
+        <Variable Name="lastname">lastname<Filter /></Variable>
+        <Variable Name="phone">phone<Filter /></Variable>
+        <Variable Name="web_url">web_url<Filter /></Variable>
+        <Variable Name="company_type">company_type<Filter /></Variable>
+        <Variable Name="name">name<Filter /></Variable>
+      </Variables>
+      <Outputs Next="" AllowEmpty="false">
+        <Output Type="ContactID" Passes="0" Value="[ContactID]" />
+        <Output Type="FirstName" Passes="0" Value="[FirstName]" />
+        <Output Type="Email" Passes="0" Value="[Email]" />
+        <Output Type="PhoneMobile" Passes="0" Value="[PhoneMobile]" />
+        <Output Type="ContactUrl" Passes="0" Value="[ContactUrl]" />
+        <Output Type="EntityId" Passes="0" Value="[ContactID]" />
+        <Output Type="EntityType" Passes="0" Value="Contacts" />
+        <Output Type="FirstName" Passes="0" Value="[firstname]" />
+        <Output Type="LastName" Passes="0" Value="[lastname]" />
+        <Output Type="PhoneHome" Passes="0" Value="[phone]" />
+        <Output Type="ContactUrl" Passes="0" Value="[web_url]" />
+        <Output Type="EntityType" Passes="0" Value="[company_type]" />
+        <Output Type="CompanyName" Passes="0" Value="[name]" />
+      </Outputs>
+    </Scenario>
+  </Scenarios>
+</Crm>

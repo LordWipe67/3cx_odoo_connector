@@ -1,0 +1,22 @@
+<odoo>
+  <data noupdate="1">
+
+    <record id="token_3cx_crm" model="ir.config_parameter">
+      <field name="key">crm.3cx.auth</field>
+      <field name="value">123A</field>
+    </record>
+
+
+
+  </data>
+  <data noupdate="0">
+    <record id="my_config_settings" model="res.config.settings">
+      <field name="group_use_lead" eval="True"/>
+    </record>
+    <function model="res.config.settings" name="execute">
+      <value model="res.config.settings" search="[('id', '=', ref('my_config_settings'))]"/>
+    </function>
+  </data>
+
+
+</odoo>

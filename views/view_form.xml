@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="trecxcrm_form_view">
+        <field name="name">trecxcrm.form</field>
+        <field name="model">trecxcrm</field>
+        <field name="arch" type="xml">
+            <form string="View Form">
+                <sheet>
+                    <!-- Group fields in two columns  -->
+                    <group name="group_top">
+                        <group name="group_left">
+                            <field name="operatore"/>
+                            <field name="telefono"/>
+                            <field name="name"/>
+                            <field name="cognome"/>
+                        </group>
+                        <group name="group_right">
+                            <field name="data_inizio"/>
+                            <field name="data_fine"/>
+                            <field name="indirizzo_url" widget="url" readonly="1" text="Apri"/>
+                            <field name="note"/>
+<!--                            <field name="gestito"/>-->
+                            <field name="token_call"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
+
+
